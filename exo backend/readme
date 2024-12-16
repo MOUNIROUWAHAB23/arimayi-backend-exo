@@ -21,13 +21,13 @@ cd <dossier_du_projet>
 
 Installez les dépendances :
 
-Assurez-vous d'être dans le répertoire du projet, puis exécutez la commande suivante pour installer toutes les dépendances requises dans le fichier requirements.txt :
+***Assurez-vous d'être dans le répertoire du projet, puis exécutez la commande suivante pour installer toutes les dépendances requises dans le fichier requirements.txt :
 
 pip install -r requirements.txt
 
 Configuration des fichiers statiques :
 
-Assurez-vous que les fichiers statiques sont correctement configurés dans votre fichier settings.py :
+*****Assurez-vous que les fichiers statiques sont correctement configurés dans votre fichier settings.py :
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -39,7 +39,7 @@ python manage.py migrate
 
 Démarrez le serveur Django :
 
-...LANCEMENT DU SERVEUR LOCAL  :
+...*LANCEMENT DU SERVEUR LOCAL  :
 
     python manage.py runserver
 
@@ -48,7 +48,7 @@ Démarrez le serveur Django :
     Si tout est configuré correctement, vous pouvez accéder à la documentation de l'API Swagger à l'URL suivante :
     http://127.0.0.1:8000/swagger/
 
-    Note : Si cette URL ne fonctionne pas (erreur 404 ou 500), cela peut être dû à une mauvaise configuration de drf-yasg ou à un problème dans le répertoire de fichiers statiques.
+   ** Note : Si cette URL ne fonctionne pas (erreur 404 ou 500), cela peut être dû à une mauvaise configuration de drf-yasg ou à un problème dans le répertoire de fichiers statiques.
     accéder alors à l'url direct :
     http://127.0.0.1:8000/static/drf-yasg/swagger-ui/swagger-ui.html
 
@@ -90,16 +90,26 @@ Structure du Projet
 
  .....ARCHITECTURE DU PROJET :Voici la structure principale de votre projet Django :
 
-/recrutement_project/
-├── /api/                # L'application API (ex: Candidats, offres)
-├── /static/             # Fichiers statiques (CSS, JS, images)
-├── /staticfiles/        # Fichiers collectés pour le déploiement
-├── /templates/          # Modèles de pages HTML (si nécessaire)
-├── manage.py            # Fichier de gestion du projet
-├── requirements.txt     # Fichier des dépendances Python
-├── settings.py          # Fichier de configuration Django
-├── urls.py              # Configuration des URL
-└── wsgi.py              # Point d'entrée pour le déploiement
+
+
+recrutement/
+├── recrutement/
+│   ├── settings.py        # Paramètres de configuration de 
+│   ├── urls.py            # Gestion des routes URL
+│   ├── wsgi.py            # Point d'entrée pour le déploiement
+│   └── asgi.py            # Pour les connexions WebSocket 
+├── candidat/              # Application pour la gestion des 
+│   ├── models.py          # Modèles de données pour les 
+│   ├── views.py           # Vues pour les candidats
+│   ├── serializers.py     # Sérialise les modèles pour l'API
+│   ├── urls.py            # Routes des candidats
+│   └── admin.py           # Interface d'administration Django
+├── manage.py             # Outil de gestion de Django
+├── static/                # Dossier contenant les fichiers 
+└── templates/             # Dossier pour les templates HTML
+
+
+
 
 ....Explications sur les principales parties(FICHIERS) du projet
 
@@ -109,4 +119,4 @@ Structure du Projet
     
     urls.py : Définit les routes de votre API, y compris la route pour afficher la documentation Swagger.
     
-    settings.py : Contient la configuration générale de Django, y compris la gestion des fichiers statiques.
+    settings.py : Contient la configuration générale de Django, y compris la gestion des fichiers statiques. Contient aussi les information nécessaires à la connexion avec la database POSTGRESQL
