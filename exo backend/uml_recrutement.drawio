@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Page-1" id="m0EFzHLyyd3LZ7Nlt3XY">
+    <mxGraphModel dx="1221" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Candidat" value="Candidat" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="60" y="60" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Offre" value="Offre" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="240" y="60" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Application" value="Application" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="420" y="60" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="CandidatOffre" value="CandidatOffre" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="60" y="240" width="480" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="connect1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonal=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0" parent="1" source="Candidat" target="CandidatOffre" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connect2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonal=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0" parent="1" source="CandidatOffre" target="Offre" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connect3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonal=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0" parent="1" source="Application" target="CandidatOffre" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connect4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonal=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0" parent="1" source="Application" target="Candidat" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connect5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonal=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0" parent="1" source="Application" target="Offre" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sHjXIJOl2-FrDvGmFEpV-1" value="+----------------+       +----------------+       +-----------------+&#xa;|   Candidat    |       |   Offre        |       |   Application   |&#xa;+----------------+       +----------------+       +-----------------+&#xa;| - id: int      |       | - id: int      |       | - id: int       |&#xa;| - nom: string  |       | - titre: string|       | - candidat_id   |&#xa;| - email: string|       | - description: string | - offre_id      |&#xa;| - date_naiss: date |    | - date_pub: date   |   | - statut: string|&#xa;| + get_info()   |       | + get_details() |       | + apply()       |&#xa;+----------------+       +----------------+       +-----------------+&#xa;       |                      |                         |&#xa;       |                      |                         |&#xa;       +----------------------+-------------------------+&#xa;                              |       Relation&#xa;                              |&#xa;                            +------------------+&#xa;                            |    CandidatOffre |&#xa;                            +------------------+&#xa;                            | - candidat_id    |&#xa;                            | - offre_id       |&#xa;                            +------------------+" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="320" y="870" width="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
